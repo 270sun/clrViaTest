@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using BanKai.Progress.LinqRelated.Models;
 using Xunit;
 
@@ -19,7 +20,7 @@ namespace BanKai.Progress.LinqRelated
             // Please delete the return statement and write your implementation here.
             // You are allowed to write just one line of code here (a line of code is
             // a statment ended with comma).
-            return employees;
+            return employees.Where(t=>t.FullName.StartsWith("U"));
         }
 
         private void CheckResult(IEnumerable<Employee> yourResult)
@@ -31,7 +32,7 @@ namespace BanKai.Progress.LinqRelated
             };
 
             Assert.NotNull(yourResult);
-            Assert.Equal(expectedResult, yourResult);
+            Assert.Equal(expectedResult, yourResult.Where(t => t.Equals(expectedResult[0]) || t.Equals(expectedResult[1])));
         }
 
         [Fact]

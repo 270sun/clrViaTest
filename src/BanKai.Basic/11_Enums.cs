@@ -16,8 +16,8 @@ namespace BanKai.Basic
             const bool rightEqualsRight = BorderSide.Right == BorderSide.Right;
 
             // change the variable value for following 2 lines to fix the test.
-            const bool expectedResultForBottomEqualsLeft = true;
-            const bool expectedResultForRightEqualsRight = false;
+            const bool expectedResultForBottomEqualsLeft = false;
+            const bool expectedResultForRightEqualsRight = true;
 
             Assert.Equal(expectedResultForBottomEqualsLeft, bottomEqualsLeft);
             Assert.Equal(expectedResultForRightEqualsRight, rightEqualsRight);
@@ -27,10 +27,10 @@ namespace BanKai.Basic
         public void should_increase_the_integer_automatically()
         {
             // change the variable value for following 4 lines to fix the test.
-            const int leftValue = int.MinValue;
-            const int rightValue = int.MinValue;
-            const int topValue = int.MinValue;
-            const int bottomValue = int.MinValue;
+            const int leftValue = 0;
+            const int rightValue = 1;
+            const int topValue = 2;
+            const int bottomValue = 3;
 
             Assert.True((BorderSide) leftValue == BorderSide.Left);
             Assert.True((BorderSide) rightValue == BorderSide.Right);
@@ -42,10 +42,10 @@ namespace BanKai.Basic
         public void should_specify_explicity_integer_value_for_each_member()
         {
             // change the variable value for following 4 lines to fix the test.
-            const int leftValue = int.MinValue;
-            const int rightValue = int.MinValue;
-            const int topValue = int.MinValue;
-            const int bottomValue = int.MinValue;
+            const int leftValue = 12;
+            const int rightValue = 34;
+            const int topValue = 56;
+            const int bottomValue = 78;
 
             Assert.True((BorderSideExplicity)leftValue == BorderSideExplicity.Left);
             Assert.True((BorderSideExplicity)rightValue == BorderSideExplicity.Right);
@@ -60,7 +60,7 @@ namespace BanKai.Basic
                 BorderSideExplicity.Left == BorderSideExplicity.LeftEquivalent;
 
             // change the variable value to fix the test.
-            const bool expectedCompareResult = false;
+            const bool expectedCompareResult = true;
 
             Assert.Equal(expectedCompareResult, differentDeclareWithSameValueCompareResult);
         }
@@ -69,10 +69,10 @@ namespace BanKai.Basic
         public void should_increase_the_integer_according_to_layout()
         {
             // change the variable value for following 4 lines to fix the test.
-            const int leftValue = int.MinValue;
-            const int rightValue = int.MinValue;
-            const int topValue = int.MinValue;
-            const int bottomValue = int.MinValue;
+            const int leftValue = 12;
+            const int rightValue = 13;
+            const int topValue = 78;
+            const int bottomValue = 79;
 
             Assert.True((BorderSideLayout)leftValue == BorderSideLayout.Left);
             Assert.True((BorderSideLayout)rightValue == BorderSideLayout.Right);
@@ -86,7 +86,7 @@ namespace BanKai.Basic
             var parsedBottomEnumValue = (BorderSide)Enum.Parse(typeof(BorderSide), "Bottom");
 
             // change the variable value to fix the test.
-            const BorderSide expectedEnumValue = BorderSide.Left;
+            const BorderSide expectedEnumValue = BorderSide.Bottom;
 
             Assert.Equal(expectedEnumValue, parsedBottomEnumValue);
         }
@@ -97,7 +97,7 @@ namespace BanKai.Basic
             var parsedBottomEnumValue = (BorderSide)Enum.Parse(typeof(BorderSide), "3");
 
             // change the variable value to fix the test.
-            const BorderSide expectedEnumValue = BorderSide.Left;
+            const BorderSide expectedEnumValue = BorderSide.Bottom;
 
             Assert.Equal(expectedEnumValue, parsedBottomEnumValue);
         }
@@ -110,7 +110,7 @@ namespace BanKai.Basic
             const bool includeLeft = (leftAndRight & BorderSideFlag.Left) != 0;
             
             // change the variable value to fix the test.
-            const bool expectedIncludeLeft = false;
+            const bool expectedIncludeLeft = true;
 
             Assert.Equal(expectedIncludeLeft, includeLeft);
         }

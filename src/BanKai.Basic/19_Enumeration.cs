@@ -26,7 +26,7 @@ namespace BanKai.Basic
             Exception error = getCurrentValueWithoutMoveNext.RunAndGetUnhandledException();
 
             // change the variable value to fix the test.
-            Type expectedExceptionType = typeof(Exception);
+            Type expectedExceptionType = typeof(InvalidOperationException);
 
             Assert.Equal(expectedExceptionType, error.GetType());
         }
@@ -41,7 +41,7 @@ namespace BanKai.Basic
             bool notEndOfIteration = enumerator.MoveNext();
 
             // change the variable value to fix the test.
-            const bool expected = false;
+            const bool expected = true;
 
             Assert.Equal(expected, notEndOfIteration);
         }
@@ -58,7 +58,7 @@ namespace BanKai.Basic
             int currentValue = enumerator.Current;
 
             // change the variable value to fix the test.
-            const int expectedCurrentValue = 2;
+            const int expectedCurrentValue = 1;
 
             Assert.Equal(expectedCurrentValue, currentValue);
         }
@@ -79,7 +79,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedCopyResult = new List<int> {10, 2, 3, 5};
+            var expectedCopyResult = new List<int> { 2, 3, 5,10};
 
             Assert.Equal(expectedCopyResult, copyOfCollection);
         }
@@ -96,7 +96,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedCopyResult = new List<int> { 10, 2, 3, 5 };
+            var expectedCopyResult = new List<int> { 2, 3, 5, 10 };
 
             Assert.Equal(expectedCopyResult, copyOfCollection);
         }
@@ -113,7 +113,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedNumberStorage = new List<int> {1, 2};
+            var expectedNumberStorage = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             Assert.Equal(expectedNumberStorage, numberStorage);
         }
@@ -130,7 +130,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedNumberStorage = new List<int> {1};
+            var expectedNumberStorage = new List<int> {1,2,3};
 
             Assert.Equal(expectedNumberStorage, numberStorage);
         }
@@ -147,7 +147,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedNumberStorage = new List<int> { 1, 2, 3 };
+            var expectedNumberStorage = new List<int> { 1, 2 };
 
             Assert.Equal(expectedNumberStorage, numberStorage);
         }
@@ -164,7 +164,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            var expectedNumberStorage = new List<int> { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            var expectedNumberStorage = new List<int> {  2,  4,  6,  8,  10 };
 
             Assert.Equal(expectedNumberStorage, numberStorage);
         }

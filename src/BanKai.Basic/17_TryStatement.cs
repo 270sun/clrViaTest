@@ -24,7 +24,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            const bool expectedCatchBlockCovered = true;
+            const bool expectedCatchBlockCovered = false;
 
             Assert.Equal(expectedCatchBlockCovered, isCatchBlockCovered);
         }
@@ -44,7 +44,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            const bool expectedCatchBlockCovered = false;
+            const bool expectedCatchBlockCovered = true;
 
             Assert.Equal(expectedCatchBlockCovered, isCatchBlockCovered);
         }
@@ -69,8 +69,8 @@ namespace BanKai.Basic
             }
 
             // change the variable values for the following 2 lines to fix the test.
-            const bool expectedFormatExceptionCatched = false;
-            const bool expectedExceptionCatched = true;
+            const bool expectedFormatExceptionCatched = true;
+            const bool expectedExceptionCatched = false;
 
             Assert.Equal(expectedFormatExceptionCatched, isFormatExceptionCatched);
             Assert.Equal(expectedExceptionCatched, isExceptionCatched);
@@ -91,7 +91,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.
-            const bool expectedCatchBlockCovered = false;
+            const bool expectedCatchBlockCovered = true;
 
             Assert.Equal(expectedCatchBlockCovered, isCatchBlockCovered);
         }
@@ -111,7 +111,7 @@ namespace BanKai.Basic
             };
 
             // change the variable value to fix the test.
-            Type expectedExceptionType = typeof(Exception);
+            Type expectedExceptionType = typeof(FormatException);
 
             Assert.Throws(expectedExceptionType, () => noCatchMatched());
         }
@@ -136,7 +136,7 @@ namespace BanKai.Basic
             }
 
             // change the variable value to fix the test.            
-            const string expectedTracingMessage = "";
+            const string expectedTracingMessage = "try block executed.\r\nFormatException catched.\r\nfinally blocked executed.\r\n";
 
             Assert.Equal(expectedTracingMessage, tracer.ToString());
         }
